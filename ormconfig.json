@@ -1,0 +1,24 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "Postgres2020!",
+    "database": "project",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+        "dist/modules/**/*.entity.js"
+    ],
+    "migrations": [
+        "dist/common/database/migrations/*.js"
+    ],
+    "subscribers": [
+        "dist/**/subscriber/*.js"
+    ],
+    "cli": {
+        "entitiesDir": "src/modules/**/entity",
+        "migrationsDir": "src/common/database/migrations",
+        "subscribersDir": "src/**/subscriber"
+    }
+}

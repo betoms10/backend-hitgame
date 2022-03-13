@@ -1,0 +1,1 @@
+pm2 start ./dist/main.js -i 3 --name hitgame-movies && pm2 save
