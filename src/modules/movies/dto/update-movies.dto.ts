@@ -4,6 +4,10 @@ import { AutoMap } from 'nestjsx-automapper'
 export class UpdateMoviesDto {
 	@AutoMap()
 	@ApiProperty()
+	id: string
+
+	@AutoMap()
+	@ApiProperty()
 	name: string
 
 	@AutoMap()
