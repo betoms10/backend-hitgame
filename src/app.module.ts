@@ -1,21 +1,18 @@
 import { Module } from '@nestjs/common'
 import { DatabaseModule } from './common/database/database.module'
-import { UserModule } from './modules/user/user.module'
 import { AutomapperModule } from 'nestjsx-automapper'
-import { SecurityModule } from './common/security/security.module'
-import { AdminModule } from './modules/admin/admin.module'
-import { MoviesModule } from './modules/movies/movies.module'
 import { ServeStaticModule } from '@nestjs/serve-static'
 import { join } from 'path'
+
+import { MoviesModule } from './modules/movies/movies.module'
+import { MovieTheaterModule } from './modules/movie-theater/movie-theater.module'
 
 @Module({
 	imports: [
 		AutomapperModule.withMapper(),
 		DatabaseModule,
-		UserModule,
-		SecurityModule,
-		AdminModule,
 		MoviesModule,
+		MovieTheaterModule,
 		ServeStaticModule.forRoot({
 			rootPath: join(__dirname, '..', 'public', 'web'),
 		}),

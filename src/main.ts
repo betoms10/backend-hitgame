@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import * as cookieParser from 'cookie-parser'
 import * as helmet from 'helmet'
-// import * as compression from 'compression'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import { ValidationPipe } from '@nestjs/common'
 import { AppModule } from './app.module'
@@ -11,10 +10,6 @@ import appConfig from './config'
 import { json, urlencoded } from 'express'
 //  ['error', 'warn']
 async function bootstrap() {
-	// const corsOrigin = []
-	// if (process.env.NODE_ENV == 'local') {
-	// 	corsOrigin.push(`http://localhost:4200`)
-	// }
 	const app = await NestFactory.create<NestExpressApplication>(AppModule, {
 		logger: true,
 		cors: {
@@ -34,7 +29,6 @@ async function bootstrap() {
 	app.use(urlencoded({ extended: true, limit: '50mb' }))
 	app.use(cookieParser())
 	// app.use(helmet())
-	// app.use(compression())
 
 	const options = new DocumentBuilder()
 		.setTitle('Hit-Game Movies')

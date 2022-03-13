@@ -20,9 +20,9 @@ export class MoviesService {
 		delete newMovie.id
 		delete newMovie.createdAt
 
-		const dashboard = await this.moviesRepository.save(newMovie)
+		const movies = await this.moviesRepository.save(newMovie)
 
-		return this.mapper.map(dashboard, MoviesVM, Movies)
+		return this.mapper.map(movies, MoviesVM, Movies)
 	}
 
 	async update(updateMoviesDto: UpdateMoviesDto): Promise<string> {
